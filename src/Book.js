@@ -20,7 +20,6 @@ class Book extends Component {
     }
     else {
       return "No Image Available";
-      //return `url(${book.imageLinks.thumbnail})`;
     }
   }
   /* function to get authors and handle undefined if not available */
@@ -63,7 +62,6 @@ class Book extends Component {
   render() {
     const book = this.props.book;
 
-    /* UI for a single book */
     return (
       <li>
         <div className="book">

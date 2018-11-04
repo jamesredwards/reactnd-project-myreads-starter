@@ -10,36 +10,26 @@ class BookSearch extends Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
   }
+
   state = {
     searchQuery: '',
     booksFound: [],
   };
 
-  updateSearchQuery = query => {
-    this.setState(() => ({
-      searchQuery: query.trim()
-    }));
-  }
-
-  /*clearSearchQuery = () => {
-      this.updateSearchQuery('');
-  }*/
-
   handleChange(e) {
     if (e.target.value !== '') {
-      /*this.updateSearchQuery(e.target.value)*/
       this.setState({ searchQuery: e.target.value.trim() });
       console.log(this.state.searchQuery);
       BooksAPI.search(this.state.searchQuery)
         .then(booksFound => {
           if (booksFound === undefined || booksFound.error) {
             /*debugging*/
-            console.log(`No books found matching ${this.state.searchQuery}`)
+            //console.log(`No books found matching ${this.state.searchQuery}`)
             this.setState({ booksFound: [] });
           }
           else {
             /*debugging*/
-            console.log("Setting booksfound in state");
+            //console.log("Setting booksfound in state");
             this.setState({ booksFound: booksFound });
           }
         })
