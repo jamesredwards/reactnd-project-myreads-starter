@@ -7,7 +7,7 @@ class BookShelf extends Component {
     const { books, shelf } = this.props;
     return (
       <div className="bookshelf">
-        <h2 className="bookshelf-title">{shelf.name}</h2>
+        <h1 className="bookshelf-title">{shelf.name}</h1>
         <div className="bookshelf-books">
           <ol className="books-grid">
             {books.map((book) => (
